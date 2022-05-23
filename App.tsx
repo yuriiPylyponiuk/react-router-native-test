@@ -1,16 +1,16 @@
 import React from 'react';
+import { Router, Route, Routes } from './router';
 // import { NativeRouter, Route, Routes } from 'react-router-native';
-// import { ComponentOne } from './ComponentOne';
-// import { ComponentTwo } from './ComponentTwo';
+import { ComponentOne } from './ComponentOne';
+import { ComponentTwo } from './ComponentTwo';
 
 export const App = () => (
     <>
-      <h1>{'Hello'}</h1>
-      {/* <NativeRouter initialEntries={['/']}>
+      <Router initialEntries={['/']}>
         <Routes>
-          <Route path={'/'} element={<ComponentOne />} />
-          <Route path={'/login'} element={<ComponentTwo />} />
+          <Route path='/' element={<ComponentOne />} />
+          <Route path='/login' element={<ComponentTwo />} />
         </Routes>
-      </NativeRouter> */}
+      </Router>
     </>
   );
