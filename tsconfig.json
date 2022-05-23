@@ -1,38 +1,26 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "esModuleInterop": true,
     "isolatedModules": true,
-    "jsx": "react",
-    "lib": ["es6"],
+    "jsx": "react-native",
+    "lib": ["es6", "es2017", "dom"],
+    "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": false,
     "strict": true,
-    "target": "esnext",
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin",
-        "lint": {
-          "validProperties": [
-            "aspect-ratio",
-            "elevation",
-            "margin-vertical",
-            "margin-horizontal",
-            "padding-horizontal",
-            "padding-vertical",
-            "resize-mode",
-            "shadow-color",
-            "shadow-opacity",
-            "shadow-offset",
-            "shadow-radius",
-            "text-align-vertical",
-            "tint-color"
-          ]
-        }
-      }
-    ]
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "target": "esnext"
   },
   "exclude": [
     "node_modules",

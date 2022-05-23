@@ -18,21 +18,31 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 const publicUrlOrPath = getPublicUrlOrPath(
   process.env.NODE_ENV === 'development',
   require(resolveApp('package.json')).homepage,
-  process.env.PUBLIC_URL
+  process.env.PUBLIC_URL,
 );
 
 const buildPath = process.env.BUILD_PATH || 'build';
 
 const moduleFileExtensions = [
+  'android.mjs',
+  'ios.mjs',
   'web.mjs',
   'mjs',
+  'android.js',
+  'ios.js',
   'web.js',
   'js',
+  'android.ts',
+  'ios.ts',
   'web.ts',
   'ts',
+  'android.tsx',
+  'ios.tsx',
   'web.tsx',
   'tsx',
   'json',
+  'android.jsx',
+  'ios.jsx',
   'web.jsx',
   'jsx',
 ];
@@ -40,7 +50,7 @@ const moduleFileExtensions = [
 // Resolve file paths in the same order as webpack
 const resolveModule = (resolveFn, filePath) => {
   const extension = moduleFileExtensions.find(extension =>
-    fs.existsSync(resolveFn(`${filePath}.${extension}`))
+    fs.existsSync(resolveFn(`${filePath}.${extension}`)),
   );
 
   if (extension) {
@@ -53,25 +63,23 @@ const resolveModule = (resolveFn, filePath) => {
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
-  appPath: resolveApp('.'),
-  appBuild: resolveApp(buildPath),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appPath: resolveApp('./web'),
+  appBuild: resolveApp('web/' + buildPath),
+  appPublic: resolveApp('web/public'),
+  appHtml: resolveApp('web/public/index.html'),
+  appIndexJs: resolveModule(resolveApp, 'web/src/index'),
   appPackageJson: resolveApp('package.json'),
-  appSrc: resolveApp('src'),
-  appTsConfig: resolveApp('tsconfig.json'),
-  appJsConfig: resolveApp('jsconfig.json'),
+  appSrc: resolveApp('web/src'),
+  appTsConfig: resolveApp('web/tsconfig.json'),
+  appJsConfig: resolveApp('web/jsconfig.json'),
   yarnLockFile: resolveApp('yarn.lock'),
-  testsSetup: resolveModule(resolveApp, 'src/setupTests'),
-  proxySetup: resolveApp('src/setupProxy.js'),
+  testsSetup: resolveModule(resolveApp, 'web/src/setupTests'),
+  proxySetup: resolveApp('web/src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
   appWebpackCache: resolveApp('node_modules/.cache'),
   appTsBuildInfoFile: resolveApp('node_modules/.cache/tsconfig.tsbuildinfo'),
-  swSrc: resolveModule(resolveApp, 'src/service-worker'),
+  swSrc: resolveModule(resolveApp, 'web/src/service-worker'),
   publicUrlOrPath,
 };
-
-
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
