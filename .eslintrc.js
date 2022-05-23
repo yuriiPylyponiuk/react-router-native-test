@@ -1,5 +1,11 @@
 module.exports = {
-  extends: ['@react-native-community', 'prettier', 'eslint:recommended'],
+  extends: [
+    'react-app',
+    'react-app/jest',
+    '@react-native-community',
+    'prettier',
+    'eslint:recommended',
+  ],
   globals: {
     Buffer: true,
     document: true,

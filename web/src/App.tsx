@@ -1,24 +1,28 @@
 import React from 'react';
 import './App.css';
 import {View, Text} from 'react-native';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <View>
-          <Text>{'sdfsdf'}</Text>
-        </View>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <View>
+        <Text>{'sdfsdf'}</Text>
+      </View>
+      <BrowserRouter>
+        <div className="App">
+          <Link to={'/'}><p>{'Hello'}</p></Link>
+          <Link to={'hello'}><p>{'Hello2'}</p></Link>
+          <Routes>
+            <Route path={'/'}>
+              <p>{'sdfsf'}</p>
+            </Route>
+            <Route path={'hello'}>
+              <p>{'sdffsdsdfsf'}</p>
+            </Route>
+          </Routes>
+        </div>
+      </BrowserRouter >
+    </>
   );
 }
-
-export default App;

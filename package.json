@@ -19,10 +19,7 @@
     "tslint": "tsc --skipLibCheck --noEmit"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json}": [
-      "yarn run prettier --",
-      "yarn run lint --"
-    ]
+    "*.{js,jsx,ts,tsx,json}": ["yarn run prettier --", "yarn run lint --"]
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.7",
@@ -37,6 +34,7 @@
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.7",
+    "@types/react-router-dom": "^5.3.3",
     "axios": "^0.27.2",
     "i18n-iso-countries": "^7.1.0",
     "mobx": "^6.3.2",
@@ -64,7 +62,7 @@
     "react-native-webview": "^11.13.1",
     "react-native-youtube-iframe": "^2.1.2",
     "react-refresh": "^0.11.0",
-    "react-router-dom": "6",
+    "react-router-dom": "^6.2.2",
     "react-router-native": "^6.2.2",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",
@@ -73,6 +71,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.18.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/runtime": "^7.12.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
@@ -155,31 +154,15 @@
     "@types/react": "^18"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": ["react-app", "react-app/jest"]
   },
   "jest": {
     "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "testMatch": [
-      "**/*.(spec|test).(j|t)s?(x)"
-    ]
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+    "testMatch": ["**/*.(spec|test).(j|t)s?(x)"]
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
