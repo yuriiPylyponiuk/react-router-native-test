@@ -1,19 +1,16 @@
 import React from 'react';
-import {NativeRouter, Route, Routes} from 'react-router-native';
-import {ComponentOne} from './ComponentOne';
-import {ComponentTwo} from './ComponentTwo';
+// import { NativeRouter, Route, Routes } from 'react-router-native';
+// import { ComponentOne } from './ComponentOne';
+// import { ComponentTwo } from './ComponentTwo';
 
-const App = () => {
-  return (
+export const App = () => (
     <>
-      <NativeRouter initialEntries={['/']}>
+      <h1>{'Hello'}</h1>
+      {/* <NativeRouter initialEntries={['/']}>
         <Routes>
-          <Route path="/" element={<ComponentOne />} />
-          <Route path="/login" element={<ComponentTwo />} />
+          <Route path={'/'} element={<ComponentOne />} />
+          <Route path={'/login'} element={<ComponentTwo />} />
         </Routes>
-      </NativeRouter>
+      </NativeRouter> */}
     </>
   );
-};
-
-export default App;

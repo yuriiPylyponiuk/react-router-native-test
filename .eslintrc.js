@@ -15,21 +15,21 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-unused-vars': 'error',
     'arrow-body-style': ['error', 'as-needed'],
-    'no-console': ['error', {allow: ['debug', 'error', 'info', 'warn']}],
+    'no-console': ['error', { allow: ['debug', 'error', 'info', 'warn'] }],
     'no-unused-vars': 'error',
     'object-shorthand': ['error', 'always'],
-    quotes: [
+    'quotes': [
       'error',
       'single',
-      {allowTemplateLiterals: true, avoidEscape: true},
+      { allowTemplateLiterals: true, avoidEscape: true },
     ],
     'quote-props': ['warn', 'consistent-as-needed'],
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-curly-brace-presence': ['error', 'always'],
-    'react/self-closing-comp': ['error', {component: true, html: true}],
+    'react/self-closing-comp': ['error', { component: true, html: true }],
     'max-len': [
       'error',
-      {code: 80, ignoreRegExpLiterals: true, ignoreStrings: true},
+      { code: 80, ignoreRegExpLiterals: true, ignoreStrings: true },
     ],
   },
   overrides: [
@@ -37,8 +37,8 @@ module.exports = {
       files: ['*.json', '.prettierrc', '.eslintrc'],
       rules: {
         'quote-props': ['error', 'always'],
-        quotes: ['error', 'double'],
+        'quotes': ['error', 'double'],
       },
     },
   ],
-};
+}
